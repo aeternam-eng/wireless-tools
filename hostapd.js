@@ -100,5 +100,5 @@ function enable(options, callback) {
     commands.push(key + '=' + options[key]);
   });
 
-  return this.exec(commands.join('\n').concat('EOF\n'), callback);
+  return this.exec(commands.push('EOF').join('\n'), callback);
 }
