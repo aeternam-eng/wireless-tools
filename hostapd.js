@@ -100,7 +100,7 @@ function enable(options, callback) {
     commands.push(key + '=' + options[key]);
   });
 
-  const aux = commands.join('\n');
+  const aux = commands.join('\n').concat('EOF\n');
 
-  return this.exec(aux.concat('EOF\n'), callback);
+  return this.exec(aux, callback);
 }
