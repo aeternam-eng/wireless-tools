@@ -93,7 +93,7 @@ function enable(options, callback) {
   var file = options.interface + '-hostapd.conf';
 
   var commands = [
-    'cat <<EOF >' + file + ' && hostapd -B ' + file + ' && rm -f ' + file
+    'cat <<EOF >' + file + ' && sudo hostapd -B ' + file + ' && rm -f ' + file + 'EOF\n'
   ];
 
   Object.getOwnPropertyNames(options).forEach(function(key) {
